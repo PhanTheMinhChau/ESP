@@ -103,7 +103,7 @@
       margin: auto;
       padding: 10px;
       border: 1px solid #888;
-      width: 60%;
+      width: 80%;
     }
 
     .luuy {
@@ -129,6 +129,29 @@
       padding: 10px;
       color: white;
     }
+
+    .closetab {
+      margin: auto;
+      width: 40%;
+      margin-top: 17px;
+      position: relative;
+      display: block;
+      width: 200px;
+      height: 36px;
+      border-radius: 18px;
+      background-color: #1c89ff;
+      border: solid 1px transparent;
+      color: #fff;
+      font-size: 18px;
+      font-weight: 300;
+      cursor: pointer;
+      transition: all .1s ease-in-out;
+      &:hover {
+        background-color: transparent;
+        border-color: #fff;
+        transition: all .1s ease-in-out;
+      }
+    }
   </style>
 </head>
 
@@ -150,8 +173,8 @@
 
   <div id="deleteModal" class="modal">
     <div class="modal-content">
-      <button class="btn-warning" onclick="clearMessages()">Delete Messages</button><br>
-      <button class="btn-primary" onclick="closeModal('deleteModal'); openModal('myModal')">Change user name</button>
+      <button class="btn-primary" onclick="closeModal('deleteModal'); openModal('myModal')">Thay đổi user name</button>
+      <button class="closetab" onclick="closetable()">đóng</button>
     </div>
   </div>
 
@@ -180,6 +203,10 @@
         li.appendChild(document.createTextNode(message));
         li.setAttribute("id", "element4");
         ul.appendChild(li);
+      }
+
+      function closetable() {
+        closeModal("deleteModal");
       }
 
       function setName(name) {
